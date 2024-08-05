@@ -1,0 +1,35 @@
+.table-container {
+    width: 70%;
+    margin: 0 auto;
+    padding: 20px;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  th, td {
+    border: 1px solid  #135164;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #1a718b;
+    color: white;
+  }
+  
+  tr
+  {
+    background-color: #b9b8b8;
+  }
+  tr:nth-child(even) {
+    background-color: #959697;
+  }
+  
+  tbody tr:hover {
+    background-color: #2b90af;
+    cursor: pointer;
+  }

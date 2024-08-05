@@ -1,0 +1,25 @@
+.menu {
+    background-color: #1a718b;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+.nav-link {
+    background-color: #1a718b;
+    width: 50px;
+    color: white;
+    padding: 15px 30px;    
+    text-align: center;
+    cursor: pointer;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    
+    
+}
+
+.nav-link:hover {
+    background-color: #1a718b;
+    transform: scale(1.05);
+}
