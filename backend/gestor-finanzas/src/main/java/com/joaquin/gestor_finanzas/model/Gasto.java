@@ -20,6 +20,8 @@ public class Gasto {
     @Enumerated(EnumType.STRING)
     @Column(name="categoria")
     private Categoria categoria;
+    @Column(name="detalle")
+    private String detalle;
     @Column(name="monto")
     private Double monto;
     @Column(name="fecha")

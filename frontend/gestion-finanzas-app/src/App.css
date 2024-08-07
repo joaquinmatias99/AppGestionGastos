@@ -1,0 +1,10 @@
+.container {
+    background-color: rgba(0, 0, 0, 0.555);
+    padding: 80px 75px;
+}
+
+.section {  
+    max-width: 1200px;
+    margin:0 auto;
+    padding: 100px 50px;
+}

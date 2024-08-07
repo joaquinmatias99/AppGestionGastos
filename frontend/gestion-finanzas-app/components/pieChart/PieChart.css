@@ -1,17 +1,17 @@
 .pie-chart-container {
   margin: 0 auto;
-  margin-bottom: 80px;
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
   align-items: center;
   padding: 20px;
+
   
 }
 
 .pie-chart-title {
   margin-bottom: 10px;
-  color: #1a718b;
+  color: #129ec9;
   font-size: 18px;
 }

@@ -2,26 +2,31 @@ import Home from "../ui/home/Home"
 import Footer from "../ui/footer/Footer"
 import NavBar from "../ui/navBar/NavBar"
 import PieChart from "../components/pieChart/PieChart"
-import Table from "../components/table/Table"
+import Table from "../components/sectionTable/Table"
+import useFetchGastos from "../hooks/useFetchGastos"
+import SectionTable from "../components/sectionTable/SectionTable"
+import "./App.css"
 
-const sampleData = [
-  { categoria: 'Alimentos', monto: '300', fecha: '2024-08-05', detalle: 'Compra en supermercado' },
-  { categoria: 'Transporte', monto: '200', fecha: '2024-08-04', detalle: 'Gasolina' },
-  { categoria: 'Entretenimiento', monto: '150', fecha: '2024-08-03', detalle: 'Entrada al cine' },
-  { categoria: 'Salud', monto: '100', fecha: '2024-08-02', detalle: 'Consulta médica' },
-  { categoria: 'Otros', monto: '50', fecha: '2024-08-01', detalle: 'Varios' },
-];
+
 
 
 function App() {
 
+  const { data, loading, error } = useFetchGastos('http://localhost:8080/api/gastos');
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
 
   return (
     <>
       <NavBar />
-      <Home />
-      <Table data={sampleData} />
-      <PieChart/>
+      <div className="container">
+        <Home />
+        <div className="section">
+          <SectionTable />
+          <Table data={data} />
+        </div>
+        <PieChart data={data} />
+      </div>
       <Footer />
 
     </>

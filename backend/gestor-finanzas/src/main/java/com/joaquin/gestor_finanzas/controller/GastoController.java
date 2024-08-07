@@ -11,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/gastos")
+@CrossOrigin(origins = "http://localhost:5173")
 public class GastoController {
 
     @Autowired
@@ -33,7 +34,6 @@ public class GastoController {
         try {
             Gasto createdGasto = gastoService.addGasto(idPersona, gasto);
             return ResponseEntity.status(HttpStatus.CREATED).body(createdGasto);
-
         } catch (Exception e) {
             return ResponseEntity.status(404).body(e.getMessage());
         }
@@ -59,6 +59,7 @@ public class GastoController {
             return ResponseEntity.status(404).body(e.getMessage());
         }
     }
+
     @DeleteMapping("/persona/{id}")
     public ResponseEntity<?> deleteGastoByIdPersona(@PathVariable Long id) {
         try {

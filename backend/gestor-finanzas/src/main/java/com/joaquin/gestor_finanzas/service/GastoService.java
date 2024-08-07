@@ -60,6 +60,7 @@ public class GastoService implements IGastoService {
                 .map(existingGasto -> {
                     existingGasto.setCategoria(gasto.getCategoria());
                     existingGasto.setMonto(gasto.getMonto());
+                    existingGasto.setDetalle(gasto.getDetalle());
                     existingGasto.setFecha(gasto.getFecha());
                     existingGasto.setIdPersona(gasto.getIdPersona());
                     return gastoRepo.save(existingGasto);

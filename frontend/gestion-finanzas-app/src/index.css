@@ -1,4 +1,8 @@
-body{
-  background-color: rgb(212, 212, 212);
-  color:white;
+body {
+  background-image: url('./assets/fondo.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+
+  margin: 0;
+  color: white;
 }

@@ -1,0 +1,33 @@
+.addButton {
+    background-color: #2F6690;
+    color: #FFFFFF;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.addButton:hover {
+    background-color: #3A7CA5;
+}
+
+.option {
+    background-color: #D9DCD6;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.option:hover {
+    background-color: #C0C4C8;
+}
+
+.option option {
+    background-color: #FFFFFF;
+    color: #000000;
+}

@@ -7,19 +7,23 @@ const Table = ({ data }) => {
       <table>
         <thead>
           <tr>
+            <th>Id Gasto</th>
             <th>Categoría</th>
+            <th>Detalle</th>
             <th>Monto</th>
             <th>Fecha</th>
-            <th>Detalle</th>
+            <th>Id Persona</th>
           </tr>
         </thead>
         <tbody>
           {data.map((item, index) => (
             <tr key={index}>
+              <td>{item.id}</td>
               <td>{item.categoria}</td>
+              <td>{item.detalle}</td>
               <td>{item.monto}</td>
               <td>{item.fecha}</td>
-              <td>{item.detalle}</td>
+              <td>{item.idPersona}</td>
             </tr>
           ))}
         </tbody>

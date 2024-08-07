@@ -1,5 +1,4 @@
 .home-container {
-    padding: 20px;
     max-width: 600px;
     margin: 0 auto;
     font-family: Arial, sans-serif;
@@ -7,13 +6,12 @@
   }
   
   .home-container h1 {
-    color: #1a718b;
-    margin-bottom: 20px;
-    margin-top: 20px;
+    color: #1891b6;
+
   }
   
   .home-container p {
     font-size: 16px;
-    color: #333;
+    color:white;
   }
   
