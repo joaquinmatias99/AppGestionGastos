@@ -7,10 +7,11 @@
     margin-top: 20px;
     width: 100%;
     border-collapse: collapse;
+  
   }
   
   th, td {
-    border: 1px solid  #135164;
+    /*border: 1px solid  #135164;*/
     padding: 8px;
     text-align: left;
   }
@@ -22,10 +23,10 @@
   
   tr
   {
-    background-color: #b9b8b8;
+    background-color: #b9b8b8de;
   }
   tr:nth-child(even) {
-    background-color: #959697;
+    background-color: #959697c3;
   }
   
   tbody tr:hover {
