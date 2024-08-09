@@ -17,17 +17,15 @@ Este proyecto es una aplicación para la gestión de finanzas personales, actual
 
 **Estado actual del proyecto**
 
-Backend
-El backend está en funcionamiento y casi completo. Las tareas restantes incluyen:
+El backend está en funcionamiento y en gran parte terminado. Aún falta documentar con Swagger, agregar HandlerException y dockerizar la aplicación.
 
-- Documentación con Swagger
-- Agregar HandlerException
-- Dockerización
+En cuanto al frontend, estoy dedicando mis esfuerzos a mejorar mis habilidades en React. Aunque la web es sencilla, el objetivo principal es aprender React y aplicar buenas prácticas. Para lograr esto, he enfocado el desarrollo en:
 
-Frontend
-Actualmente, estoy concentrado en el desarrollo del frontend, ya que es el área en la que más quiero aprender. Hasta ahora, se han logrado los siguientes avances:
+- Desarrollo en React: Implementar la aplicación utilizando React para profundizar en el manejo de estados, efectos y la arquitectura de componentes.
 
- La página principal ha sido desarrollada con un diseño limpio y funcional. Proporciona un resumen general de la aplicación y acceso a las principales funcionalidades.
+- Aplicación de Buenas Prácticas: Seguir prácticas recomendadas para asegurar un código limpio y mantenible. Esto incluye la componentización para crear elementos reutilizables, el manejo de hooks para controlar el estado y efectos secundarios de manera eficiente, y la validación de props con PropTypes para garantizar la integridad de los datos.
+
+La página principal ha sido desarrollada con un diseño limpio y funcional, y proporciona un resumen general de la aplicación y acceso a las principales funcionalidades.
 
 ![Home](/docs/paginaPrincipal.png)
 
@@ -35,7 +33,8 @@ Se ha integrado un gráfico de pastel que visualiza la distribución de gastos. 
 
 ![PieChart](/docs/pieChart.png)
 
-El modal de gasto ha sido implementado para permitir a los usuarios agregar nuevos gastos de manera eficiente. Incluye un formulario con campos para categoría, detalle, monto y fecha. Además, el modal se cierra correctamente al hacer clic fuera de él o al presionar el botón de cerrar.
+El modal de gasto ha sido implementado para permitir a los usuarios agregar nuevos gastos de manera eficiente. Incluye un formulario con campos para categoría, detalle, monto y fecha. 
+Además, el modal se cierra correctamente al hacer clic fuera de él o al presionar el botón de cerrar.
 Este modal es reutilizado para otras funciones.
 
 ![Modal](/docs/modalGasto.png)
