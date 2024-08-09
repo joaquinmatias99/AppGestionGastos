@@ -1,19 +1,24 @@
+import PropTypes from 'prop-types';
 import "./Dropdown.css";
 
-export const Dropdown = () => {
-    return (
-        <div>
-            <select className="option">
-                <option value="">Seleccione una categoría</option>
-                <option value="supermercado">Supermercado</option>
-                <option value="comida">Comida</option>
-                <option value="entretenimiento">Entretenimiento</option>
-                <option value="viaje">Viaje</option>
-                <option value="juegos">Juegos</option>
-                <option value="otros">Otros</option>
-            </select>
-        </div>
-    )
-}
+export const Dropdown = ({ onChange }) => {
+  return (
+    <div>
+      <select className="option" onChange={(e) => onChange(e.target.value)}>
+        <option value="">Seleccione una categoría</option>
+        <option value="SUPERMERCADO">Supermercado</option>
+        <option value="COMIDA">Comida</option>
+        <option value="ENTRETENIMIENTO">Entretenimiento</option>
+        <option value="VIAJE">Viaje</option>
+        <option value="JUEGOS">Juegos</option>
+        <option value="OTROS">Otros</option>
+      </select>
+    </div>
+  );
+};
+
+Dropdown.propTypes = {
+  onChange: PropTypes.func.isRequired,
+};
 
 export default Dropdown;

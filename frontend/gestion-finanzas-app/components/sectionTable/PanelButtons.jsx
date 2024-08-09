@@ -16,7 +16,7 @@ export const PanelButtons= () => {
       <button onClick={toggleModal}>Agregar</button>
       <Dropdown/>
 
-      {isModalOpen && <ModalExpense onClose={toggleModal}  title="Agregar Gasto"/>}
+      {isModalOpen && <ModalExpense onClose={toggleModal}  title="Agregar Gasto" idPersona={1}/>}
     </div>
   );
   
