@@ -53,6 +53,7 @@ const ModalExpense = ({ onClose, title }) => {
 
 ModalExpense.propTypes = {
   onClose: PropTypes.func.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default ModalExpense;
