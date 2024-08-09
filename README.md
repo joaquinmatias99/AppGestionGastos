@@ -15,3 +15,19 @@ Este proyecto es una aplicación para la gestión de finanzas personales, actual
 - **Frontend:** React, HTML, CSS, JavaScript
 - **Otros:** Axios
 
+**Estado actual**
+
+El backend está en gran parte terminado, falta documentar con Swagger y agregar HandlerException para una mejor claridad en el codigo y dockerizar.
+
+La página principal ha sido desarrollada con un diseño limpio y funcional. La interfaz muestra un resumen general de la aplicación y proporciona acceso a las principales funcionalidades.
+
+![Home](/docs/paginaPrincipal.png)
+
+Se ha integrado un gráfico de pastel que visualiza la distribución de gastos. Este gráfico permite a los usuarios ver de manera clara y concisa cómo se dividen sus gastos en diferentes categorías. El gráfico está diseñado para ser interactivo y se actualiza automáticamente con la información más reciente.
+
+![PieChart](/docs/pieChart.png)
+
+El modal de gasto ha sido implementado para permitir a los usuarios agregar nuevos gastos de manera eficiente. Incluye un formulario con campos para categoría, detalle, monto y fecha. Además, el modal se cierra correctamente al hacer clic fuera de él o al presionar el botón de cerrar.
+Este modal es reutilizado para otras funciones.
+
+![Modal](/docs/modalGasto.png)
