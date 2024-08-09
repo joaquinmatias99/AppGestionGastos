@@ -15,11 +15,19 @@ Este proyecto es una aplicación para la gestión de finanzas personales, actual
 - **Frontend:** React, HTML, CSS, JavaScript
 - **Otros:** Axios
 
-**Estado actual**
+**Estado actual del proyecto**
 
-El backend está en gran parte terminado, falta documentar con Swagger y agregar HandlerException para una mejor claridad en el codigo y dockerizar.
+Backend
+El backend está en funcionamiento y casi completo. Las tareas restantes incluyen:
 
-La página principal ha sido desarrollada con un diseño limpio y funcional. La interfaz muestra un resumen general de la aplicación y proporciona acceso a las principales funcionalidades.
+- Documentación con Swagger
+- Agregar HandlerException
+- Dockerización
+
+Frontend
+Actualmente, estoy concentrado en el desarrollo del frontend, ya que es el área en la que más quiero aprender. Hasta ahora, se han logrado los siguientes avances:
+
+ La página principal ha sido desarrollada con un diseño limpio y funcional. Proporciona un resumen general de la aplicación y acceso a las principales funcionalidades.
 
 ![Home](/docs/paginaPrincipal.png)
 
