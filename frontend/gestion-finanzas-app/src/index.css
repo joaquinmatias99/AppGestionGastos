@@ -6,3 +6,17 @@ body {
   margin: 0;
   color: white;
 }
+button {
+  background-color: #2F6690;
+  color: #FFFFFF;
+  padding: 8px 15px;
+  margin-right: 10px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #3A7CA5;
+}

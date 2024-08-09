@@ -3,8 +3,12 @@
     padding: 80px 75px;
 }
 
-.section {  
+.section {
     max-width: 1200px;
-    margin:0 auto;
+    margin: 0 auto;
     padding: 100px 50px;
+    display: flex;
+    flex-direction: column;
 }
+
+

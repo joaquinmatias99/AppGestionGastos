@@ -4,7 +4,7 @@ import NavBar from "../ui/navBar/NavBar"
 import PieChart from "../components/pieChart/PieChart"
 import Table from "../components/sectionTable/Table"
 import useFetchGastos from "../hooks/useFetchGastos"
-import SectionTable from "../components/sectionTable/SectionTable"
+import PanelButtons from "../components/sectionTable/PanelButtons"
 import "./App.css"
 
 
@@ -22,7 +22,7 @@ function App() {
       <div className="container">
         <Home />
         <div className="section">
-          <SectionTable />
+          <PanelButtons />
           <Table data={data} />
         </div>
         <PieChart data={data} />
