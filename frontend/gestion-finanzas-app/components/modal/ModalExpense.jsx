@@ -78,7 +78,16 @@ const ModalExpense = ({ onClose, title, gasto, idPersona }) => {
           </div>
           <div className="form-group">
             <label>Fecha</label>
-            <input type="date" id="fecha" value={formGasto.fecha} onChange={handleChange} />
+            <input
+              type="date"
+              id="fecha"
+              value={formGasto.fecha}
+              onChange={handleChange}
+              min="2023-01-01"
+              max="2050-12-31"
+              onKeyDown={(e) => e.preventDefault()}
+            />
+
           </div>
           <button type="submit" className="submit-button" disabled={addLoading || editLoading}>
             {addLoading || editLoading ? 'Guardando...' : (gasto ? 'Actualizar' : 'Agregar')}
@@ -105,7 +114,7 @@ ModalExpense.propTypes = {
 };
 
 ModalExpense.defaultProps = {
-  gasto: null, 
+  gasto: null,
 };
 
 export default ModalExpense;
