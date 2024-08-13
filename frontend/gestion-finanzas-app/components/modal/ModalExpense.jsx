@@ -3,46 +3,51 @@ import PropTypes from 'prop-types';
 import './ModalExpense.css';
 import Dropdown from '../dropdown/Dropdown';
 import useAddGasto from '../../hooks/useAddGasto';
+import useEditGasto from '../../hooks/useEditGasto';
 
-const ModalExpense = ({ onClose, title, idPersona }) => {
-  const [gasto, setGasto] = useState({
-    categoria: '',
-    monto: '',
-    fecha: '',
-    detalle: ''
+const ModalExpense = ({ onClose, title, gasto, idPersona }) => {
+  const [formGasto, setFormGasto] = useState({
+    categoria: gasto?.categoria || '',
+    monto: gasto?.monto || '',
+    fecha: gasto?.fecha || '',
+    detalle: gasto?.detalle || ''
   });
 
-  const url = `http://localhost:8080/api/gastos/${idPersona}`;
-  const { addGasto, loading, error, success } = useAddGasto(url);
 
-//Actualiza el valor del campo en el momento que se cambie
-  const handleChange = (e) => {
-    const { id, value } = e.target;
-    setGasto(prevGasto => ({ ...prevGasto, [id]: value }));
-  };
+  const url = gasto ? `http://localhost:8080/api/gastos/${gasto.id}` : `http://localhost:8080/api/gastos/${idPersona}`;
+  const { addGasto, loading: addLoading, error: addError, success: addSuccess } = useAddGasto(`http://localhost:8080/api/gastos/${idPersona}`);
+  const { editGasto, loading: editLoading, error: editError, success: editSuccess } = useEditGasto(url);
 
-//Actualiza el valor del desplegable al momento de seleccionar otro
-  const handleDropdownChange = (value) => {
-    setGasto(prevGasto => ({ ...prevGasto, categoria: value }));
-  };
-//Chequea el desplegable categoria
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (!gasto.categoria) {
+    if (!formGasto.categoria) {
       alert("Por favor selecciona una categoría válida.");
       return;
     }
-    addGasto(gasto);
+
+    if (gasto) {
+      editGasto(formGasto);
+    } else {
+      addGasto(formGasto);
+    }
   };
 
-//Chequear click del modal
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    setFormGasto(prevGasto => ({ ...prevGasto, [id]: value }));
+  };
+
+  const handleDropdownChange = (value) => {
+    setFormGasto(prevGasto => ({ ...prevGasto, categoria: value }));
+  };
 
   const handleClickOutside = (event) => {
     if (!modalRef.current.contains(event.target)) {
       onClose();
     }
   };
-  
+
   const modalRef = useRef(null);
 
   useEffect(() => {
@@ -61,25 +66,25 @@ const ModalExpense = ({ onClose, title, idPersona }) => {
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Categoria</label>
-            <Dropdown onChange={handleDropdownChange} />
+            <Dropdown onChange={handleDropdownChange} value={formGasto.categoria} />
           </div>
           <div className="form-group">
             <label>Detalle</label>
-            <input type="text" id="detalle" value={gasto.detalle} onChange={handleChange} />
+            <input type="text" id="detalle" value={formGasto.detalle} onChange={handleChange} />
           </div>
           <div className="form-group">
             <label>Monto</label>
-            <input type="number" id="monto" value={gasto.monto} onChange={handleChange} />
+            <input type="number" id="monto" value={formGasto.monto} onChange={handleChange} />
           </div>
           <div className="form-group">
             <label>Fecha</label>
-            <input type="date" id="fecha" value={gasto.fecha} onChange={handleChange} />
+            <input type="date" id="fecha" value={formGasto.fecha} onChange={handleChange} />
           </div>
-          <button type="submit" className="submit-button" disabled={loading}>
-            {loading ? 'Agregando...' : 'Agregar'}
+          <button type="submit" className="submit-button" disabled={addLoading || editLoading}>
+            {addLoading || editLoading ? 'Guardando...' : (gasto ? 'Actualizar' : 'Agregar')}
           </button>
-          {error && <p>{error}</p>}
-          {success && <p>Gasto agregado correctamente</p>}
+          {(addError || editError) && <p>{addError || editError}</p>}
+          {(addSuccess || editSuccess) && <p>Gasto {gasto ? 'actualizado' : 'agregado'} correctamente</p>}
         </form>
       </div>
     </div>
@@ -89,7 +94,18 @@ const ModalExpense = ({ onClose, title, idPersona }) => {
 ModalExpense.propTypes = {
   onClose: PropTypes.func.isRequired,
   title: PropTypes.string.isRequired,
+  gasto: PropTypes.shape({
+    id: PropTypes.number,
+    categoria: PropTypes.string,
+    monto: PropTypes.string,
+    fecha: PropTypes.string,
+    detalle: PropTypes.string,
+  }),
   idPersona: PropTypes.number.isRequired,
+};
+
+ModalExpense.defaultProps = {
+  gasto: null, 
 };
 
 export default ModalExpense;

@@ -11,6 +11,8 @@ export const PanelButtons= () => {
     setIsModalOpen(!isModalOpen);
   };
 
+  
+
   return (
     <div className='panelButtons'>
       <button onClick={toggleModal}>Agregar</button>

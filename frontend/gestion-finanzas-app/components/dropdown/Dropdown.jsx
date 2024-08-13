@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import "./Dropdown.css";
 
-export const Dropdown = ({ onChange }) => {
+export const Dropdown = ({ value, onChange }) => {
   return (
     <div>
-      <select className="option" onChange={(e) => onChange(e.target.value)}>
+      <select className="option" value={value} onChange={(e) => onChange(e.target.value)}>
         <option value="">Seleccione una categoría</option>
         <option value="SUPERMERCADO">Supermercado</option>
         <option value="COMIDA">Comida</option>
@@ -18,7 +18,13 @@ export const Dropdown = ({ onChange }) => {
 };
 
 Dropdown.propTypes = {
+  value: PropTypes.string,
   onChange: PropTypes.func.isRequired,
+};
+
+
+Dropdown.defaultProps = {
+  value: '',
 };
 
 export default Dropdown;
