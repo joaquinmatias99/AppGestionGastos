@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import './Table.css';
 
-const Table = ({ data, onEdit, onDelete }) => {
+const Table = ({ data, onEdit, onDelete, isDeleteLoading }) => {
   return (
     <div className="table-container">
       <table>
@@ -30,7 +30,12 @@ const Table = ({ data, onEdit, onDelete }) => {
                 <button onClick={() => onEdit(item)}>Editar</button>
               </td>
               <td>
-                <button onClick={() => onDelete(item.id)}>Borrar</button>
+              <button 
+                  onClick={() => onDelete(item.id)} 
+                  disabled={isDeleteLoading}
+                >
+                  {isDeleteLoading ? 'Eliminando...' : 'Borrar'}
+                </button>
               </td>
             </tr>
           ))}
