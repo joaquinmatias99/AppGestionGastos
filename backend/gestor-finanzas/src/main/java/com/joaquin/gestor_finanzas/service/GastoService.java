@@ -58,15 +58,26 @@ public class GastoService implements IGastoService {
     public Gasto editGastoById(Long id, Gasto gasto) throws Exception {
         return gastoRepo.findById(id)
                 .map(existingGasto -> {
-                    existingGasto.setCategoria(gasto.getCategoria());
-                    existingGasto.setMonto(gasto.getMonto());
-                    existingGasto.setDetalle(gasto.getDetalle());
-                    existingGasto.setFecha(gasto.getFecha());
-                    existingGasto.setIdPersona(gasto.getIdPersona());
+                    if (gasto.getCategoria() != null) {
+                        existingGasto.setCategoria(gasto.getCategoria());
+                    }
+                    if (gasto.getMonto() != null) {
+                        existingGasto.setMonto(gasto.getMonto());
+                    }
+                    if (gasto.getDetalle() != null) {
+                        existingGasto.setDetalle(gasto.getDetalle());
+                    }
+                    if (gasto.getFecha() != null) {
+                        existingGasto.setFecha(gasto.getFecha());
+                    }
+                    if (gasto.getIdPersona() != null) {
+                        existingGasto.setIdPersona(gasto.getIdPersona());
+                    }
                     return gastoRepo.save(existingGasto);
                 })
                 .orElseThrow(() -> new IllegalArgumentException("No existe el gasto con id: " + id));
     }
+
 
 
     @Override
